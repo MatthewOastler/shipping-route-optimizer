@@ -1,0 +1,24 @@
+port_id,port_name,country,lat,lon,region,port_type
+SYD,Sydney,Australia,-33.8688,151.2093,Oceania,Container
+MEL,Melbourne,Australia,-37.8136,144.9631,Oceania,Container
+BNE,Brisbane,Australia,-27.4698,153.0251,Oceania,Container
+AKL,Auckland,New Zealand,-36.8509,174.7645,Oceania,Container
+SIN,Singapore,Singapore,1.2644,103.8223,Asia,Global Hub
+HKG,Hong Kong,China,22.3080,114.2250,Asia,Container
+SHA,Shanghai,China,31.2304,121.4737,Asia,Mega Port
+BUS,Busan,South Korea,35.1796,129.0756,Asia,Container
+TOK,Tokyo,Japan,35.6762,139.6503,Asia,Container
+DXB,Dubai,UAE,25.0657,55.1713,Middle East,Container
+JED,Jeddah,Saudi Arabia,21.4858,39.1925,Middle East,Container
+RTM,Rotterdam,Netherlands,51.9490,4.1340,Europe,Mega Port
+HAM,Hamburg,Germany,53.5511,9.9937,Europe,Container
+ANT,Antwerp,Belgium,51.2194,4.4025,Europe,Container
+LON,London,UK,51.5074,-0.1278,Europe,Container
+NYC,New York,USA,40.7128,-74.0060,North America,Container
+LAX,Los Angeles,USA,33.7361,-118.2922,North America,Container
+SEA,Seattle,USA,47.6062,-122.3321,North America,Container
+HOU,Houston,USA,29.7604,-95.3698,North America,Energy
+PAN,Panama Canal,Panama,9.0800,-79.6800,Central America,Strategic
+RIO,Rio de Janeiro,Brazil,-22.9068,-43.1729,South America,Container
+CPT,Cape Town,South Africa,-33.9249,18.4241,Africa,Container
+DAR,Dar es Salaam,Tanzania,-6.7924,39.2083,Africa,Container

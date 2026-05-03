@@ -1,0 +1,139 @@
+# ============================================================
+# PYTHON
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python environment files
+.env
+.env.*
+*.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# ============================================================
+# STREAMLIT
+# ============================================================
+
+.streamlit/secrets.toml
+.streamlit/config.toml
+
+# ============================================================
+# OS FILES
+# ============================================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# IDE / EDITOR
+# ============================================================
+
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ============================================================
+# DATA / GENERATED FILES
+# ============================================================
+
+# Large generated route exports (optional — remove if you want public sample data)
+data/generated_routes_large.csv
+
+# Sensitive private data
+data/private/
+data/raw_private/
+
+# API keys / credentials
+credentials/
+secrets/
+keys/
+*.pem
+*.key
+*.crt
+*.pfx
+*.p12
+
+# SSH
+id_rsa
+id_rsa.pub
+*.ppk
+
+# Cloud / DevOps secrets
+kubeconfig
+*.kubeconfig
+*.yaml.secret
+*.json.secret
+*.tfvars
+terraform.tfstate
+terraform.tfstate.backup
+
+# ============================================================
+# DATABASE
+# ============================================================
+
+*.db
+*.sqlite
+*.sqlite3
+
+# MySQL dumps
+*.sql
+*.dump
+
+# ============================================================
+# REPORT OUTPUTS
+# ============================================================
+
+analysis/*.csv
+tests/*.csv
+
+# Optional:
+# Uncomment if you want to exclude generated datasets entirely
+# data/generated_routes.csv
+
+# ============================================================
+# PACKAGE / BUILD
+# ============================================================
+
+dist/
+build/
+*.egg-info/
+
+# ============================================================
+# SECURITY
+# ============================================================
+
+# Never upload personal credentials
+passwords.txt
+tokens.txt
+api_keys.txt
+secret_keys.txt
+config_private.py

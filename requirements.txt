@@ -1,0 +1,6 @@
+pandas
+networkx
+streamlit
+matplotlib
+pytest
+geopy
