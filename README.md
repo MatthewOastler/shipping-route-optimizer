@@ -1,6 +1,6 @@
 # Shipping Route Optimizer
 
-> **Accurate results without lying to ourselves**
+> **Accurate results with simple logic**
 
 A professionally validated shipping logistics optimization platform that calculates optimal maritime routes between global ports using:
 
