@@ -1,0 +1,137 @@
+Best upgrade order
+Upgrade	Priority	Why
+Speed optimization	1	Easy next step, directly improves TCE
+Vessel availability	2	Adds real commercial shipping logic
+Market-based freight premium	3	Builds on vessel availability
+Fleet optimization	4	Needs multiple vessels first
+Port congestion	5	Needs external/live data or assumptions
+Live bunker prices	6	Needs API/source
+AIS integration	7	Most impressive, but hardest
+What I would build next
+Version 2.2 — Speed Optimization
+
+Let user test several vessel speeds:
+
+11 knots
+12 knots
+13 knots
+14 knots
+15 knots
+
+For each speed, calculate:
+
+Sea days
+Fuel consumed
+Fuel cost
+Voyage profit
+TCE
+
+Then output:
+
+Best Speed by TCE
+Best Speed by Profit
+Fastest Arrival
+Lowest Fuel Cost
+
+This is the best next feature because it fits perfectly with your current voyage economics engine.
+
+After that
+Version 2.3 — Vessel Availability
+
+Add:
+
+vessels.csv
+
+with:
+
+vessel_name,dwt,current_port,available_date,speed_knots,fuel_burn_tpd
+
+Then the app can answer:
+
+Which available ship gives the best TCE?
+AIS / live data
+
+I would leave AIS until Version 3.
+
+AIS, congestion, and bunker prices are excellent ideas, but they introduce live-data problems. Your motto means you should only add them once your static model is solid and well-tested.
+
+
+
+
+
+
+Demurrage
+
+The ship is delayed beyond the agreed loading/unloading time ("laytime").
+
+The cargo owner (charterer) pays the ship owner.
+
+Example:
+
+Allowed laytime: 3 days
+Actual loading: 5 days
+
+2 days late
+
+Demurrage:
+$15,000/day
+
+Ship owner receives:
+$30,000
+🚢 Dispatch
+
+The opposite.
+
+Loading/unloading finishes faster than allowed.
+
+The ship owner pays the charterer a reward.
+
+Example:
+
+Allowed laytime: 3 days
+Actual loading: 2 days
+
+1 day saved
+
+Dispatch:
+$7,500/day
+
+Ship owner pays:
+$7,500
+
+Dispatch is often about 50% of the demurrage rate, though it varies.
+
+Add to your Version 2 To-Do List
+Voyage Operations
+Demurrage Rate ($/day)
+Dispatch Rate ($/day)
+
+Allowed Laytime (days)
+Actual Laytime (days)
+
+Demurrage Cost
+Dispatch Savings
+Impact
+Voyage Profit
+TCE
+Why this is valuable
+
+Once you add:
+
+Vessel availability
+Speed optimization
+Demurrage/Dispatch
+
+your system starts answering questions like:
+
+Should I steam faster to avoid demurrage?
+
+Is paying extra fuel worth saving 2 days?
+
+Does a faster vessel increase TCE?
+
+These are exactly the kinds of commercial decisions real chartering managers and ship owners make every day.
+
+I'd put Demurrage/Dispatch immediately after Speed Optimization on your roadmap. It has a big impact on voyage profitability and TCE while being relatively easy to implement.
+
+
