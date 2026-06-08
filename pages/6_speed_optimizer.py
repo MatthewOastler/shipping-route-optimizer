@@ -21,6 +21,11 @@ from economics.voyage_economics import (
     calculate_voyage_economics
 )
 
+from economics.speed_fuel_model import (
+    estimate_fuel_burn_at_speed
+)
+
+
 # ============================================================
 # PAGE CONFIG
 # ============================================================
@@ -120,29 +125,48 @@ with col3:
 # FUEL
 # ============================================================
 
-st.subheader("Fuel Assumptions")
+st.subheader("Vessel Profile")
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 with col1:
 
-    fuel_burn = st.number_input(
-        "Fuel Consumption (tonnes/day)",
+    base_speed_knots = st.number_input(
+        "Reference Speed (knots)",
+        min_value=5.0,
+        max_value=30.0,
+        value=13.0,
+        step=0.5
+    )
+
+with col2:
+
+    base_fuel_burn_tpd = st.number_input(
+        "Reference Fuel Burn (t/day)",
         min_value=1.0,
         max_value=200.0,
         value=30.0,
         step=1.0
     )
 
-with col2:
+with col3:
 
-    fuel_price = st.number_input(
-        "Fuel Price ($/tonne)",
-        min_value=100.0,
-        max_value=3000.0,
-        value=600.0,
-        step=10.0
+    fuel_curve_exponent = st.number_input(
+        "Fuel Curve Exponent",
+        min_value=2.0,
+        max_value=4.0,
+        value=3.0,
+        step=0.1
     )
+
+fuel_price = st.number_input(
+    "Fuel Price ($/tonne)",
+    min_value=100.0,
+    max_value=3000.0,
+    value=600.0,
+    step=10.0
+)
+
 
 # ============================================================
 # PORT COSTS
@@ -292,70 +316,81 @@ if st.button("Run Speed Optimization"):
         int(max_speed) + 1
     ):
 
+        fuel_burn_at_speed = estimate_fuel_burn_at_speed(
+            speed_knots=speed,
+            base_speed_knots=base_speed_knots,
+            base_fuel_burn_tpd=base_fuel_burn_tpd,
+            exponent=fuel_curve_exponent
+        )
+        
         result = calculate_voyage_economics(
-
+        
             distance_nm=total_distance,
-
+        
             route_cost=base_route_cost,
-
+        
             cargo_tonnes=cargo_tonnes,
-
+        
             freight_rate=freight_rate,
-
+        
             vessel_speed_knots=speed,
-
-            fuel_burn_tonnes_per_day=fuel_burn,
-
+        
+            fuel_burn_tonnes_per_day=fuel_burn_at_speed,
+        
             fuel_price=fuel_price,
-
+        
             load_port_cost=load_port_cost,
-
+        
             discharge_port_cost=discharge_port_cost,
-
+        
             freight_premium_percent=freight_premium_percent,
-
+        
             ballast_days=ballast_days,
-
+        
             waiting_days=waiting_days,
-
+        
             port_days=port_days,
-
+        
             transit_port_count=transit_port_count,
-
+        
             transit_fee_per_port=transit_fee_per_port,
-
+        
             route_cost_multiplier=route_cost_multiplier
         )
-
+        
+        
         results.append({
 
             "Speed (knots)":
                 speed,
-
+        
+            "Fuel Burn (t/day)":
+                round(fuel_burn_at_speed, 2),
+        
             "Sea Days":
                 result["sea_days"],
-
+        
             "Total Voyage Days":
                 result["total_voyage_days"],
-
+        
             "Fuel Consumed":
                 result["fuel_consumed"],
-
+        
             "Fuel Cost":
                 result["fuel_cost"],
-
+        
             "Voyage Revenue":
                 result["voyage_revenue"],
-
+        
             "Voyage Cost":
                 result["voyage_cost"],
-
+        
             "Voyage Profit":
                 result["voyage_profit"],
-
+        
             "TCE":
                 result["tce"]
-
+        
         })
 
     results_df = pd.DataFrame(
