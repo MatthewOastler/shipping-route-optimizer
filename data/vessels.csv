@@ -1,4 +1,38 @@
-﻿"vessel_name,vessel_type,dwt,speed_knots,fuel_burn_tpd"
-"Handy Trader,Handysize,35000,12,18"
-"Pacific Bulk,Panamax,82000,13,30"
-"Atlantic Cape,Capesize,180000,14,52"
+﻿vessel_name,vessel_type,dwt,speed_knots,fuel_burn_tpd,cargo_capacity_tonnes
+Handy Trader 1,Handysize,28000,11.5,16,25000
+Handy Trader 2,Handysize,32000,12,18,29000
+Handy Trader 3,Handysize,35000,12,20,32000
+Handy Trader 4,Handysize,38000,12.5,22,35000
+Supramax Pacific,Supramax,50000,12.5,24,47000
+Supramax Atlantic,Supramax,52000,12.5,25,49000
+Supramax Orion,Supramax,56000,13,27,53000
+Supramax Neptune,Supramax,58000,13,28,55000
+Ultramax Global,Ultramax,62000,13,29,59000
+Ultramax Titan,Ultramax,64000,13.5,30,61000
+Ultramax Horizon,Ultramax,66000,13.5,31,63000
+Panamax Pacific,Panamax,74000,13,29,70000
+Panamax Atlantic,Panamax,76000,13,30,72000
+Panamax Orion,Panamax,78000,13,31,74000
+Panamax Neptune,Panamax,80000,13.5,32,76000
+Panamax Global,Panamax,82000,13.5,33,78000
+Kamsarmax Titan,Kamsarmax,82000,13.5,33,78000
+Kamsarmax Voyager,Kamsarmax,84000,13.5,34,80000
+Kamsarmax Horizon,Kamsarmax,85000,14,35,81000
+Kamsarmax Mercury,Kamsarmax,86000,14,36,82000
+Post-Panamax Giant,Post-Panamax,95000,14,38,90000
+Post-Panamax Trader,Post-Panamax,98000,14,40,93000
+Post-Panamax Carrier,Post-Panamax,100000,14.5,42,95000
+Mini Cape 1,Capesize,140000,14,45,130000
+Mini Cape 2,Capesize,150000,14,48,140000
+Atlantic Cape,Capesize,170000,14.5,52,160000
+Pacific Cape,Capesize,175000,14.5,54,165000
+Ocean Giant,Capesize,180000,14.5,56,170000
+Global Cape,Capesize,185000,14.5,58,175000
+Newcastlemax Titan,Newcastlemax,205000,14.5,62,195000
+Newcastlemax Voyager,Newcastlemax,208000,14.5,64,198000
+Newcastlemax Horizon,Newcastlemax,210000,15,66,200000
+VLCC Titan,VLCC,300000,15,75,280000
+VLCC Global,VLCC,305000,15,78,285000
+VLCC Neptune,VLCC,310000,15.5,80,290000
+ULCC Atlas,ULCC,400000,15,95,380000
+ULCC Hercules,ULCC,420000,15,100,400000

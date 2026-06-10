@@ -1,3 +1,4 @@
+
 # pages/6_speed_optimizer.py
 
 import sys

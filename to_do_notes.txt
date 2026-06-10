@@ -135,3 +135,230 @@ These are exactly the kinds of commercial decisions real chartering managers and
 I'd put Demurrage/Dispatch immediately after Speed Optimization on your roadmap. It has a big impact on voyage profitability and TCE while being relatively easy to implement.
 
 
+
+
+
+
+
+data/vessels.csv
+
+Example:
+
+vessel_name,vessel_type,dwt,speed_knots,fuel_burn_tpd
+Handy Trader,Handysize,35000,12,18
+Pacific Bulk,Panamax,82000,13,30
+Atlantic Cape,Capesize,180000,14,52
+
+Then replace manual inputs:
+
+Reference Speed
+Reference Fuel Burn
+
+with:
+
+Select Vessel
+
+This immediately makes the model more realistic.
+
+Version 2.4 — Demurrage / Dispatch ⭐
+
+Add:
+
+Allowed Laytime
+Actual Laytime
+
+Demurrage Rate ($/day)
+Dispatch Rate ($/day)
+
+Output:
+
+Demurrage Cost
+Dispatch Credit
+Adjusted Profit
+Adjusted TCE
+
+This is one of the most important commercial shipping concepts.
+
+Version 2.5 — Vessel Availability ⭐⭐⭐
+
+Add:
+
+vessel_name,current_port,available_date
+Pacific Bulk,SYD,2026-06-08
+Atlantic Cape,SIN,2026-06-12
+
+Then answer:
+
+Which vessel can perform this voyage?
+
+Which available vessel gives highest TCE?
+
+Now you're starting to solve real operational problems.
+
+Version 2.6 — Fleet Optimizer ⭐⭐⭐⭐
+
+Multiple ships.
+
+Multiple cargoes.
+
+Example:
+
+3 vessels
+5 cargo opportunities
+
+Output:
+
+Best allocation
+Total fleet profit
+Fleet TCE
+
+This is where optimization becomes genuinely valuable.
+
+Version 3 Backlog
+Live bunker prices
+Port congestion
+Canal delays
+Weather delays
+AIS vessel tracking
+Freight market indexes
+What I would build next
+
+Vessel Profiles (data/vessels.csv)
+
+Reason:
+
+Current:
+One generic ship
+
+Next:
+Real vessel classes
+Handysize
+Supramax
+Panamax
+Capesize
+VLCC
+
+This improves the realism of every page you've already built:
+
+Voyage Economics
+Speed Optimizer
+Future Vessel Availability
+Future Fleet Optimization
+
+So if I were following your roadmap, my next coding task would be:
+
+data/vessels.csv
+economics/vessel_profiles.py
+
+before moving on to Demurrage/Dispatch.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Based on your current project status, I'd organize the roadmap like this:
+
+✅ Version 1 (Complete)
+Route Optimizer
+Dijkstra
+A*
+Brute Force Validation
+Route Visualization
+Conclusion Matrix
+Voyage Economics
+Speed Optimizer
+🚢 Version 2 (Commercial Shipping)
+Priority 1
+7_vessel_selector.py
+
+data/vessels.csv
+economics/vessel_profiles.py
+
+Select real vessel classes
+Handysize
+Supramax
+Panamax
+Capesize
+VLCC
+Priority 2
+8_laytime_calculator.py
+
+Demurrage
+Dispatch
+Laytime
+Priority 3
+9_vessel_availability.py
+
+Current vessel location
+Available date
+Earliest arrival
+Priority 4
+10_fleet_optimizer.py
+
+Multiple vessels
+Multiple cargoes
+
+Best allocation
+Fleet profit
+Fleet TCE
+🚢 Version 3 (Operations)
+Priority 5
+11_stowage_planner.py
+
+Features:
+
+Cargo allocation by hold
+Stowage factor
+Weight utilization
+Volume utilization
+Draft estimate
+Priority 6
+Port Congestion Model
+Canal Delay Model
+Weather Delay Model
+Priority 7
+Live Bunker Prices
+🚢 Version 4 (Advanced)
+Priority 8
+AIS Vessel Tracking
+Priority 9
+Live Freight Market Integration
+Priority 10
+Digital Twin of Fleet
+My recommended next build
+1. Vessel Profiles
+2. Demurrage / Dispatch
+3. Vessel Availability
+4. Fleet Optimizer
+5. Stowage Planner
+
+That sequence gives the biggest increase in commercial realism while staying aligned with your project motto:
+
+Accurate results without lying to ourselves.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
