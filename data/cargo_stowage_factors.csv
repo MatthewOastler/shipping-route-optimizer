@@ -1,0 +1,16 @@
+cargo_name,cargo_type,stowage_factor_m3_per_tonne,notes
+Iron Ore,Iron Ore,0.40,Dense bulk cargo; weight capacity usually limits before volume
+Iron Ore Fines,Iron Ore,0.43,Dense bulk cargo; check moisture/TML assumptions in real operations
+Thermal Coal,Coal,1.25,Common dry bulk cargo; moderate volume requirement
+Metallurgical Coal,Coal,1.20,Common dry bulk cargo; moderate volume requirement
+Wheat,Grain,1.35,Grain cargo; requires grain stability/stowage consideration
+Corn,Grain,1.40,Grain cargo; volume requirement higher than ore/coal
+Soybeans,Grain,1.50,Grain/oilseed cargo; relatively high stowage volume
+Barley,Grain,1.45,Grain cargo; relatively high stowage volume
+Bauxite,Bauxite,0.75,Dense mineral cargo
+Alumina,Alumina,1.00,Dry bulk mineral cargo
+Fertilizer,Fertilizer,1.10,Dry bulk cargo; may require contamination controls
+Cement Clinker,Cement Clinker,0.80,Dense dry bulk cargo
+Petroleum Coke,Petroleum Coke,1.40,Light bulk cargo; volume can become limiting
+Salt,Salt,0.95,Dry bulk cargo; corrosion/contamination considerations
+Steel Products,Steel Products,0.55,Heavy breakbulk/general cargo style assumption

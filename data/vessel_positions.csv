@@ -1,0 +1,38 @@
+vessel_name,current_port,available_days,daily_hire_cost
+Handy Trader 1,SYD,0,7000
+Handy Trader 2,MEL,1,7500
+Handy Trader 3,BNE,2,7800
+Handy Trader 4,AKL,3,8200
+Supramax Pacific,SYD,0,10500
+Supramax Atlantic,SIN,3,11000
+Supramax Orion,DXB,5,11500
+Supramax Neptune,RTM,7,11800
+Ultramax Global,SIN,1,12500
+Ultramax Titan,HKG,2,13000
+Ultramax Horizon,SHA,4,13200
+Panamax Pacific,SYD,2,14500
+Panamax Atlantic,SIN,0,15000
+Panamax Orion,DXB,3,15500
+Panamax Neptune,RTM,5,15800
+Panamax Global,NYC,6,16000
+Kamsarmax Titan,SIN,1,16500
+Kamsarmax Voyager,SYD,4,17000
+Kamsarmax Horizon,RTM,2,17200
+Kamsarmax Mercury,DXB,6,17500
+Post-Panamax Giant,SIN,3,19000
+Post-Panamax Trader,RTM,4,19500
+Post-Panamax Carrier,DXB,5,20000
+Mini Cape 1,SYD,2,22000
+Mini Cape 2,CPT,3,22500
+Atlantic Cape,RTM,0,24000
+Pacific Cape,SIN,2,24500
+Ocean Giant,DXB,4,25500
+Global Cape,NYC,5,26000
+Newcastlemax Titan,RTM,3,28000
+Newcastlemax Voyager,SIN,4,28500
+Newcastlemax Horizon,DXB,6,29000
+VLCC Titan,DXB,1,35000
+VLCC Global,SIN,3,36000
+VLCC Neptune,RTM,5,37000
+ULCC Atlas,DXB,7,45000
+ULCC Hercules,SIN,9,47000

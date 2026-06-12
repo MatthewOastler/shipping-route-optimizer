@@ -351,6 +351,120 @@ Accurate results without lying to ourselves.
 
 
 
+At this point I'd move from vessel selection to actual shipping operations.
+
+Current roadmap status:
+
+✅ Route Optimizer
+✅ A* vs Dijkstra vs Brute Force
+✅ Voyage Economics
+✅ Speed Optimization
+✅ Vessel Profiles
+✅ Vessel Selector
+
+Next: Vessel Availability
+
+Create:
+
+data/vessel_positions.csv
+
+Example:
+
+vessel_name,current_port,available_days,daily_hire_cost
+Handy Trader 1,SYD,0,7000
+Pacific Bulk,SIN,3,12000
+Atlantic Cape,DXB,1,18000
+Ocean Giant,RTM,5,25000
+
+New page:
+
+pages/8_vessel_availability.py
+
+Questions it answers:
+
+Cargo: 80,000 tonnes
+Load Port: SYD
+
+Which vessels can carry it?
+
+Which vessel arrives first?
+
+Which vessel produces highest TCE?
+
+Which vessel produces highest profit?
+After that: Demurrage / Dispatch
+
+New page:
+
+pages/9_laytime_calculator.py
+
+Inputs:
+
+Allowed Laytime
+Actual Laytime
+Demurrage Rate
+Dispatch Rate
+
+Outputs:
+
+Demurrage Cost
+Dispatch Credit
+Adjusted Profit
+Adjusted TCE
+
+This is one of the most realistic commercial shipping features.
+
+Then: Fleet Optimizer
+pages/10_fleet_optimizer.py
+
+Multiple ships.
+
+Multiple cargoes.
+
+Output:
+
+Best allocation
+Fleet profit
+Fleet TCE
+Then: Stowage Planner
+pages/11_stowage_planner.py
+
+Inputs:
+
+Cargo Type
+Cargo Tonnes
+Stowage Factor
+Number of Holds
+
+Outputs:
+
+Hold Allocation
+Weight Utilization
+Volume Utilization
+Draft Estimate
+My recommendation
+
+The next thing I would build is:
+
+data/vessel_positions.csv
+pages/8_vessel_availability.py
+
+because it naturally connects:
+
+Route
+→ Vessel Selection
+→ Vessel Availability
+→ Voyage Economics
+→ Fleet Optimization
+
+and starts making the project feel like a real chartering and operations platform rather than just a routing tool.
+
+
+
+
+
+
+
 
 
 

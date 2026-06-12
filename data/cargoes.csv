@@ -1,0 +1,16 @@
+cargo_id,cargo_name,cargo_type,load_port,discharge_port,cargo_tonnes,freight_rate
+C001,Iron Ore,Iron Ore,CPT,SIN,160000,35
+C002,Iron Ore Fines,Iron Ore,SIN,CPT,175000,36
+C003,Thermal Coal,Coal,DXB,SIN,75000,32
+C004,Metallurgical Coal,Coal,RTM,DXB,80000,30
+C005,Wheat,Grain,SYD,SIN,30000,25
+C006,Corn,Grain,SYD,RTM,50000,28
+C007,Soybeans,Grain,SYD,SHA,65000,29
+C008,Barley,Grain,AKL,SIN,40000,26
+C009,Bauxite,Bauxite,NYC,RTM,90000,31
+C010,Alumina,Alumina,RTM,SIN,68000,30
+C011,Fertilizer,Fertilizer,SIN,AKL,45000,24
+C012,Cement Clinker,Cement Clinker,SYD,DXB,55000,29
+C013,Petroleum Coke,Petroleum Coke,DXB,RTM,85000,33
+C014,Salt,Salt,CPT,AKL,60000,27
+C015,Steel Products,Steel Products,DXB,AKL,35000,27
