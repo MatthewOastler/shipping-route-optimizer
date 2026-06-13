@@ -1,0 +1,16 @@
+port,delay_days,congestion_level,berth_utilization_pct,waiting_risk_score
+SYD,0.5,Low,65,2
+MEL,0.8,Low,70,3
+BNE,0.7,Low,68,3
+AKL,0.4,Low,60,2
+SIN,1.5,Medium,82,6
+HKG,1.8,Medium,85,6
+SHA,3.0,High,95,9
+DXB,1.2,Medium,80,5
+RTM,2.5,High,92,8
+CPT,1.8,Medium,84,6
+NYC,2.0,High,90,8
+LAX,2.2,High,91,8
+TOK,1.5,Medium,83,6
+BUS,1.2,Medium,79,5
+MUM,2.8,High,94,9
