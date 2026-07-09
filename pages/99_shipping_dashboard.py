@@ -1,3 +1,7 @@
+
+
+
+
 # pages/99_shipping_dashboard.py
 
 import sys
@@ -44,13 +48,18 @@ POSITIONS_FILE = "data/vessel_positions.csv"
 CARGOES_FILE = "data/cargoes.csv"
 CONGESTION_FILE = "data/port_congestion.csv"
 STOWAGE_FILE = "data/cargo_stowage_factors.csv"
+OPERATING_COSTS_FILE = "data/vessel_operating_costs.csv"
+
 
 routes = pd.read_csv(ROUTES_FILE)
 vessels = load_vessels(VESSELS_FILE)
+
+
 positions = pd.read_csv(POSITIONS_FILE)
 cargoes = pd.read_csv(CARGOES_FILE)
 congestion = pd.read_csv(CONGESTION_FILE)
 stowage_factors = pd.read_csv(STOWAGE_FILE)
+opex = pd.read_csv(OPERATING_COSTS_FILE)
 
 graph = build_graph(routes)
 
@@ -61,17 +70,35 @@ fleet = vessels.merge(
 )
 
 
+fleet = fleet.merge(
+    opex,
+    on="vessel_type",
+    how="left"
+)
+
+
 # ============================================================
 # CLEAN DATA
 # ============================================================
+
 
 for col in [
     "cargo_capacity_tonnes",
     "speed_knots",
     "fuel_burn_tpd",
     "available_days",
-    "daily_hire_cost"
+    "daily_hire_cost",
+    "crew_cost_per_day",
+    "insurance_cost_per_day",
+    "maintenance_cost_per_day",
+    "technical_management_cost_per_day",
+    "stores_cost_per_day",
+    "admin_overhead_cost_per_day",
+    "total_opex_per_day"
 ]:
+
+
+
     fleet[col] = pd.to_numeric(
         fleet[col],
         errors="coerce"
@@ -368,17 +395,31 @@ def evaluate_candidate(
         *
         float(vessel["daily_hire_cost"])
     )
+    
+    opex_cost = (
+        economics["total_voyage_days"]
+        *
+        float(vessel["total_opex_per_day"])
+    )
+        
+    
+    
+
+
 
     net_profit = (
         economics["voyage_profit"]
         -
         hire_cost
         -
+        opex_cost
+        -
         demurrage_cost
         +
         dispatch_credit
     )
-
+        
+        
     net_tce = (
         net_profit
         /
@@ -386,7 +427,10 @@ def evaluate_candidate(
         if economics["total_voyage_days"] > 0
         else 0
     )
-
+        
+     
+    
+    
     utilization = (
         cargo["cargo_tonnes"]
         /
@@ -414,6 +458,7 @@ def evaluate_candidate(
         "demurrage_cost": demurrage_cost,
         "dispatch_credit": dispatch_credit,
         "hire_cost": hire_cost,
+        "opex_cost": opex_cost,
         "net_profit": net_profit,
         "net_tce": net_tce,
         "utilization": utilization,
@@ -828,6 +873,7 @@ if st.button("Run Master Voyage Assessment"):
                 "Voyage Revenue": candidate["economics"]["voyage_revenue"],
                 "Voyage Cost": candidate["economics"]["voyage_cost"],
                 "Hire Cost": round(candidate["hire_cost"], 2),
+                "OPEX Cost": round(candidate["opex_cost"], 2),
                 "Demurrage Cost": round(candidate["demurrage_cost"], 2),
                 "Dispatch Credit": round(candidate["dispatch_credit"], 2),
                 "Net Profit": round(candidate["net_profit"], 2),
@@ -1057,6 +1103,7 @@ if st.button("Run Master Voyage Assessment"):
         "Revenue": economics["voyage_revenue"],
         "Voyage Cost": economics["voyage_cost"],
         "Hire Cost": round(best_candidate["hire_cost"], 2),
+        "OPEX Cost": round(best_candidate["opex_cost"], 2),
         "Demurrage Cost": round(best_candidate["demurrage_cost"], 2),
         "Dispatch Credit": round(best_candidate["dispatch_credit"], 2),
         "Net Profit": round(best_candidate["net_profit"], 2),
@@ -1081,6 +1128,7 @@ if st.button("Run Master Voyage Assessment"):
         "Base Route Cost": economics["base_route_cost"],
         "Adjusted Route Cost": economics["adjusted_route_cost"],
         "Hire Cost": round(best_candidate["hire_cost"], 2),
+        "OPEX Cost": round(best_candidate["opex_cost"], 2),
         "Demurrage Cost": round(best_candidate["demurrage_cost"], 2),
         "Dispatch Credit": round(best_candidate["dispatch_credit"], 2)
     }])

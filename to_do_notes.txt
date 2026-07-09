@@ -462,6 +462,7 @@ and starts making the project feel like a real chartering and operations platfor
 
 
 
+on ship costs, crew, insurance etc
 
 
 
@@ -469,8 +470,28 @@ and starts making the project feel like a real chartering and operations platfor
 
 
 
+What I would do next
 
+Create:
 
+data/vessel_operating_costs.csv
+pages/17_vessel_operating_costs.py
+
+and split:
+
+Crew Cost
+Insurance
+Maintenance
+Management
+Other OPEX
+
+Then your dashboard could show:
+
+Voyage Revenue
+Voyage Cost
+Vessel OPEX
+Net Profit
+Net TCE
 
 
 

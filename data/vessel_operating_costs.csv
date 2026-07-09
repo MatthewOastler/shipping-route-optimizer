@@ -1,0 +1,11 @@
+vessel_type,crew_cost_per_day,insurance_cost_per_day,maintenance_cost_per_day,technical_management_cost_per_day,stores_cost_per_day,admin_overhead_cost_per_day,total_opex_per_day
+Handysize,3500,900,1400,700,500,400,7400
+Supramax,4200,1100,1700,800,600,500,8900
+Ultramax,4500,1200,1800,850,650,550,9550
+Panamax,5000,1400,2100,1000,700,600,10800
+Kamsarmax,5300,1500,2200,1050,750,650,11450
+Post-Panamax,6000,1800,2600,1200,850,750,13200
+Capesize,7000,2200,3200,1500,1000,900,15800
+Newcastlemax,7600,2500,3600,1700,1100,1000,17500
+VLCC,9000,3500,5000,2200,1400,1300,22400
+ULCC,10500,4500,6500,2800,1700,1600,27600
