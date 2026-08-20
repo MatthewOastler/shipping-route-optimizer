@@ -1,4 +1,4 @@
-vessel_name,current_port,available_days,daily_hire_cost
+vessel_name,current_port,available_days,market_hire_rate_per_day
 Handy Trader 1,SYD,0,7000
 Handy Trader 2,MEL,1,7500
 Handy Trader 3,BNE,2,7800
